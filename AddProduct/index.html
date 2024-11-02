@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Adicionar Produto</title>
+</head>
+<body>
+    <button id="openModalBtn">Adicionar Produto</button>
+
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="container">
+                <header>
+                    <h1>ADICIONAR PRODUTO</h1>
+                </header>
+                <div class="content">
+                    <div class="product-section">
+                        <div class="product-image">
+                            <img src="../imgs/Hamburguer.png" alt="Hamburguer">
+                            <button class="edit-image">✏️</button>
+                        </div>
+
+                        <div class="product-details">
+                            <div class="product-name-stock">
+                                <div class="product-name">Hamburguer</div>
+                                <div class="stock-counter">
+                                    <button class="stock-button">-</button>
+                                    <span id="stock-count">7</span>
+                                    <button class="stock-button">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-info">
+                        <div class="input-group">
+                            <label for="validade">Validade</label>
+                            <input type="text" id="validade" placeholder="Até 7 dias antes do vencimento.">
+                        </div>
+                        <div class="input-group">
+                            <label for="categoria">Categoria</label>
+                            <input type="text" id="categoria">
+                        </div>
+                        <div class="input-group">
+                            <label for="descricao">Descrição</label>
+                            <input id="descricao"></input>
+                        </div>
+                        <div class="input-group">
+                            <label for="localizacao">Localização</label>
+                            <input type="text" id="localizacao">
+                        </div>
+                    </div>
+                </div>
+
+                <button class="post-button">POSTAR</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get modal element
+        const modal = document.getElementById("productModal");
+        // Get open modal button
+        const openModalBtn = document.getElementById("openModalBtn");
+        // Get close button
+        const closeBtn = document.getElementsByClassName("close")[0];
+
+        // Open modal
+        openModalBtn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // Close modal
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Close modal if outside click
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

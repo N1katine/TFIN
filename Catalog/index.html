@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu - The Future is Now</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="header">
+    <h1>Menu</h1>
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar alimentos" oninput="filterList()" />
+    </div>
+    <div class="profile-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+        <path
+          d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm0 2a8 8 0 0 0-7.968 7.055C5.425 9.182 8.51 8 12 8s6.575 1.182 7.968 3.055A8 8 0 0 0 12 4zm0 12a6 6 0 0 0-5.8 4.195A7.977 7.977 0 0 0 12 20a7.977 7.977 0 0 0 5.8-1.805A6 6 0 0 0 12 16z" />
+      </svg>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="products">
+      <div class="product">
+        <img src="../imgs/menu/tudo.png" alt="product" />
+        <div class="product-info">
+          <h2>Geral</h2>
+          <p>Todos os itens</p>
+        </div>
+      </div>
+      <div class="product">
+        <img src="../imgs/menu/lanches.png" alt="product" />
+        <div class="product-info">
+          <h2>Lanches</h2>
+          <p>Os lanches mais saborosos</p>
+        </div>
+      </div>
+
+      <div class="product">
+        <img src="../imgs/menu/doces.png" alt="product" />
+        <div class="product-info">
+          <h2>Doces</h2>
+          <p>Para adoçar a vida</p>
+        </div>
+      </div>
+      <div class="product">
+        <img src="../imgs/menu/naturais.png" alt="product" />
+        <div class="product-info">
+          <h2>Naturais</h2>
+          <p>Para colocar o shape</p>
+        </div>
+      </div>
+      <div class="product">
+        <img src="../imgs/menu/bebidas.png" alt="product" />
+        <div class="product-info">
+          <h2>Bebidas</h2>
+          <p>Para curtir</p>
+        </div>
+      </div>
+      <div class="product">
+        <img src="../imgs/menu/saudaveis.png" alt="product" />
+        <div class="product-info">
+          <h2>Saudáveis</h2>
+          <p>Para manter a pele boa</p>
+        </div>
+      </div>
+    </div>
+    <div class="recommended">
+      <h2>Recomendados</h2>
+      <div class="recommended-items" onclick="openModal2()">
+        <div class="recommended-item">
+          <img src="../imgs/Hamburguer.png" alt="product" />
+          <div class="product-info">
+            <h2>Hambúrguer</h2>
+            <p>X-Tudo</p>
+          </div>
+        </div>
+        <div class="recommended-item">
+          <img src="../imgs/menu/doces.png" alt="product" />
+          <div class="product-info">
+            <h2>Doces</h2>
+            <p>Para adoçar a vida</p>
+          </div>
+        </div>
+        <div class="recommended-item">
+          <img src="../imgs/menu/doces.png" alt="product" />
+          <div class="product-info">
+            <h2>Doces</h2>
+            <p>Para adoçar a vida</p>
+          </div>
+        </div>
+        <div class="recommended-item">
+          <img src="../imgs/menu/doces.png" alt="product" />
+          <div class="product-info">
+            <h2>Doces</h2>
+            <p>Para adoçar a vida</p>
+          </div>
+        </div>
+        <div class="recommended-item">
+          <img src="../imgs/menu/doces.png" alt="product" />
+          <div class="product-info">
+            <h2>Doces</h2>
+            <p>Para adoçar a vida</p>
+          </div>
+        </div>
+        <div class="recommended-item">
+          <img src="../imgs/menu/doces.png" alt="product" />
+          <div class="product-info">
+            <h2>Doces</h2>
+            <p>Para adoçar a vida</p>
+          </div>
+        </div>
+        <div class="recommended-item">
+          <img src="../imgs/menu/doces.png" alt="product" />
+          <div class="product-info">
+            <h2>Doces</h2>
+            <p>Para adoçar a vida</p>
+          </div>
+        </div>
+        <div class="recommended-item">
+          <img src="../imgs/menu/doces.png" alt="product" />
+          <div class="product-info">
+            <h2>Doces</h2>
+            <p>Para adoçar a vida</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div class="container">
+        <header>
+          <h1>ADICIONAR PRODUTO</h1>
+        </header>
+        <div class="content">
+          <div class="product-section">
+            <div class="product-image">
+              <img src="../imgs/Hamburguer.png" alt="Hamburguer" />
+              <button class="edit-image">✏️</button>
+            </div>
+
+            <div class="product-details">
+              <div class="product-name-stock">
+                <div class="product-name">Hamburguer</div>
+                <div class="stock-counter">
+                  <button class="stock-button">-</button>
+                  <span id="stock-count">1</span>
+                  <button class="stock-button">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-info">
+            <div class="input-group">
+              <label for="validade">Validade</label>
+              <input type="text" id="validade" placeholder="Até 7 dias antes do vencimento." />
+            </div>
+            <div class="input-group">
+              <label for="categoria">Categoria</label>
+              <input type="text" id="categoria" />
+            </div>
+            <div class="input-group">
+              <label for="descricao">Descrição</label>
+              <input id="descricao" />
+            </div>
+            <div class="input-group">
+              <label for="localizacao">Endereço</label>
+              <input type="text" id="localizacao" />
+            </div>
+          </div>
+        </div>
+
+        <div class="button-container">
+          <button class="post-button" onclick="post()">POSTAR</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <div id="myModal2" class="modal2">
+    <div class="modal-content2">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div class="container2">
+        <header>
+          <h1>RETIRAR PRODUTO</h1>
+        </header>
+        <div class="content2">
+          <div class="product-section2">
+            <div class="product-image2">
+              <div class="recommended-item">
+                <img src="../imgs/Hamburguer.png" alt="product" style="object-fit: contain; box-shadow: none;" />
+                <div class="product-info">
+                  <h2>Hambúrguer</h2>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+          <div class="product-info">
+            <div class="input-group">
+              <label for="name">Doador</label>
+              <h3>Lucas Lopes</h3>
+            </div>
+            <div class="input-group">
+              <label for="validade">Validade</label>
+              <h3>28/10/2024</h3>
+            </div>
+            <div class="input-group">
+              <label for="categoria">Categoria</label>
+              <h3>Lanches</h3>
+            </div>
+            <div class="input-group">
+              <label for="descricao">Descrição</label>
+              <h3>X-Tudo</h3>
+            </div>
+            <div class="input-group">
+              <label for="localizacao">Endereço</label>
+              <h3>R. Santo Ângelo, 79 - Parque São Jorge</h3>
+            </div>
+          </div>
+        </div>
+        <div class="button-container">
+          <button class="post-button" onclick="post()">RETIRAR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="footer">
+    <a href="#"><i class="fas fa-home"></i></a>
+    <a href="#"><i class="fas fa-search"></i></a>
+    <a href="#"><i class="fas fa-shopping-cart"></i></a>
+    <a href="#"><i class="fas fa-plus-circle" onclick="openModal()"></i></a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
