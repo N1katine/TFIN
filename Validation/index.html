@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu - The Future is Now</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="header">
+    <h1>Menu</h1>
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar alimentos" oninput="filterList()" />
+    </div>
+    <div class="profile-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+        <path
+          d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm0 2a8 8 0 0 0-7.968 7.055C5.425 9.182 8.51 8 12 8s6.575 1.182 7.968 3.055A8 8 0 0 0 12 4zm0 12a6 6 0 0 0-5.8 4.195A7.977 7.977 0 0 0 12 20a7.977 7.977 0 0 0 5.8-1.805A6 6 0 0 0 12 16z" />
+      </svg>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="products" id="products">
+    </div>
+  </div>
+
+  <div class="footer">
+    <a href="#"><i class="fas fa-home"></i></a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
