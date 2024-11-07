@@ -56,7 +56,6 @@ body {
   margin: 30px 0 0 0;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 20px;
-
 }
 
 .recommended-item :hover {
@@ -68,6 +67,9 @@ body {
 }
 
 .products {
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+  padding-bottom: 20px;
   display: grid;
   grid-column: span 6 / span 6;
   column-gap: 20px;
@@ -82,14 +84,14 @@ body {
   justify-content: center;
   background-color: #ffffff;
   padding: 20px;
-  border-radius: 15px;
+  border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
   & img {
     width: 100%;
     height: 200px;
     object-fit: contain;
-    border-radius: 15px;
+    border-radius: 12px;
   }
 }
 
@@ -122,32 +124,36 @@ body {
   justify-content: center;
   background-color: #ffffff;
   padding: 20px;
-  border-radius: 15px;
+  border-radius: 12px;
+
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .recommended-items {
   display: grid;
+  max-height: 650px;
+  overflow-y: auto;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 20px;
 }
 
 .recommended-item {
   display: flex;
-  grid-column: span 3 / span 3;
+  grid-column: span 4 / span 4;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
   padding: 20px;
-  border-radius: 15px;
+  border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #da9a3e;
 
   & img {
     width: 100%;
     height: 200px;
     object-fit: contain;
-    border-radius: 15px;
+    border-radius: 12px;
   }
 }
 
@@ -171,7 +177,7 @@ body {
 .recommended-item img {
   width: 60%;
   height: 80px;
-  border-radius: 15px;
+  border-radius: 12px;
   object-fit: cover;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -249,8 +255,6 @@ body {
   }
 }
 
-
-
 /* MODAL */
 .container,
 .container2 {
@@ -258,8 +262,8 @@ body {
   max-width: 150%;
   margin: 0 auto;
   background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
   padding: 20px;
 }
 
@@ -383,7 +387,7 @@ textarea {
   background-color: red;
   color: white;
   font-size: 18px;
-  padding: 15px;
+  padding: 12px;
   width: auto;
   border: none;
   border-radius: 10px;
@@ -398,7 +402,6 @@ textarea {
   justify-content: end;
   align-items: center;
 }
-
 
 /* Modal styling */
 .modal,
@@ -425,7 +428,7 @@ textarea {
   border-radius: 10px;
   width: 600%;
   max-width: 900px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
 }
 
 .close {

@@ -25,110 +25,13 @@
   </div>
 
   <div class="main-content">
-    <div class="products">
-      <div class="product">
-        <img src="../imgs/menu/tudo.png" alt="product" />
-        <div class="product-info">
-          <h2>Geral</h2>
-          <p>Todos os itens</p>
-        </div>
-      </div>
-      <div class="product">
-        <img src="../imgs/menu/lanches.png" alt="product" />
-        <div class="product-info">
-          <h2>Lanches</h2>
-          <p>Os lanches mais saborosos</p>
-        </div>
-      </div>
-
-      <div class="product">
-        <img src="../imgs/menu/doces.png" alt="product" />
-        <div class="product-info">
-          <h2>Doces</h2>
-          <p>Para adoçar a vida</p>
-        </div>
-      </div>
-      <div class="product">
-        <img src="../imgs/menu/naturais.png" alt="product" />
-        <div class="product-info">
-          <h2>Naturais</h2>
-          <p>Para colocar o shape</p>
-        </div>
-      </div>
-      <div class="product">
-        <img src="../imgs/menu/bebidas.png" alt="product" />
-        <div class="product-info">
-          <h2>Bebidas</h2>
-          <p>Para curtir</p>
-        </div>
-      </div>
-      <div class="product">
-        <img src="../imgs/menu/saudaveis.png" alt="product" />
-        <div class="product-info">
-          <h2>Saudáveis</h2>
-          <p>Para manter a pele boa</p>
-        </div>
-      </div>
+    <div id="products" class="products">
+      
     </div>
     <div class="recommended">
       <h2>Recomendados</h2>
-      <div class="recommended-items" onclick="openModal2()">
-        <div class="recommended-item">
-          <img src="../imgs/Hamburguer.png" alt="product" />
-          <div class="product-info">
-            <h2>Hambúrguer</h2>
-            <p>X-Tudo</p>
-          </div>
-        </div>
-        <div class="recommended-item">
-          <img src="../imgs/menu/doces.png" alt="product" />
-          <div class="product-info">
-            <h2>Doces</h2>
-            <p>Para adoçar a vida</p>
-          </div>
-        </div>
-        <div class="recommended-item">
-          <img src="../imgs/menu/doces.png" alt="product" />
-          <div class="product-info">
-            <h2>Doces</h2>
-            <p>Para adoçar a vida</p>
-          </div>
-        </div>
-        <div class="recommended-item">
-          <img src="../imgs/menu/doces.png" alt="product" />
-          <div class="product-info">
-            <h2>Doces</h2>
-            <p>Para adoçar a vida</p>
-          </div>
-        </div>
-        <div class="recommended-item">
-          <img src="../imgs/menu/doces.png" alt="product" />
-          <div class="product-info">
-            <h2>Doces</h2>
-            <p>Para adoçar a vida</p>
-          </div>
-        </div>
-        <div class="recommended-item">
-          <img src="../imgs/menu/doces.png" alt="product" />
-          <div class="product-info">
-            <h2>Doces</h2>
-            <p>Para adoçar a vida</p>
-          </div>
-        </div>
-        <div class="recommended-item">
-          <img src="../imgs/menu/doces.png" alt="product" />
-          <div class="product-info">
-            <h2>Doces</h2>
-            <p>Para adoçar a vida</p>
-          </div>
-        </div>
-        <div class="recommended-item">
-          <img src="../imgs/menu/doces.png" alt="product" />
-          <div class="product-info">
-            <h2>Doces</h2>
-            <p>Para adoçar a vida</p>
-          </div>
-        </div>
+      <div id="recommended-items" class="recommended-items">
+
       </div>
     </div>
   </div>
@@ -189,16 +92,6 @@
     </div>
   </div>
 
-
-
-
-
-
-
-
-
-
-
   <div id="myModal2" class="modal2">
     <div class="modal-content2">
       <span class="close" onclick="closeModal()">&times;</span>
@@ -206,42 +99,8 @@
         <header>
           <h1>RETIRAR PRODUTO</h1>
         </header>
-        <div class="content2">
-          <div class="product-section2">
-            <div class="product-image2">
-              <div class="recommended-item">
-                <img src="../imgs/Hamburguer.png" alt="product" style="object-fit: contain; box-shadow: none;" />
-                <div class="product-info">
-                  <h2>Hambúrguer</h2>
-                </div>
-              </div>
-            </div>
-
-
-          </div>
-
-          <div class="product-info">
-            <div class="input-group">
-              <label for="name">Doador</label>
-              <h3>Lucas Lopes</h3>
-            </div>
-            <div class="input-group">
-              <label for="validade">Validade</label>
-              <h3>28/10/2024</h3>
-            </div>
-            <div class="input-group">
-              <label for="categoria">Categoria</label>
-              <h3>Lanches</h3>
-            </div>
-            <div class="input-group">
-              <label for="descricao">Descrição</label>
-              <h3>X-Tudo</h3>
-            </div>
-            <div class="input-group">
-              <label for="localizacao">Endereço</label>
-              <h3>R. Santo Ângelo, 79 - Parque São Jorge</h3>
-            </div>
-          </div>
+        <div id="modal-body-retirada" class="content2">
+          
         </div>
         <div class="button-container">
           <button class="post-button" onclick="post()">RETIRAR</button>
