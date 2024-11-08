@@ -38,7 +38,7 @@
 
 
 
-  <div id="myModal" class="modal">
+  <div id="adicionar-modal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
       <div class="container">
@@ -64,7 +64,7 @@
             </div>
           </div>
 
-          <div class="product-info">
+          <form id="add-form" class="product-info" >
             <div class="input-group">
               <label for="validade">Validade</label>
               <input type="text" id="validade" placeholder="Até 7 dias antes do vencimento." />
@@ -81,18 +81,28 @@
               <label for="localizacao">Endereço</label>
               <input type="text" id="localizacao" />
             </div>
-          </div>
+            <div class="input-group">
+              <label for="produto">Produto</label>
+              <input type="text" id="produto" />
+            </div>
+            <div class="input-group">
+              <label for="doador">Telefone Doador</label>
+              <input type="text" id="doador" />
+            </div>
+            
+            
+            <div class="button-container">
+              <button class="post-button" type="submit">POSTAR</button>
+            </div>
+          </form>
         </div>
 
-        <div class="button-container">
-          <button class="post-button" onclick="post()">POSTAR</button>
-        </div>
 
       </div>
     </div>
   </div>
 
-  <div id="myModal2" class="modal2">
+  <div id="retirar-item-modal" class="modal2">
     <div class="modal-content2">
       <span class="close" onclick="closeModal()">&times;</span>
       <div class="container2">

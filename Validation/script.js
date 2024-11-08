@@ -1,11 +1,10 @@
-
-
-window.addEventListener("load", initialLoad)
+window.addEventListener("load", initialLoad);
 function initialLoad() {
-    const productsContainer = document.getElementById("products")
-    let products = []
-    mockdata.map((item) => {
-        products += `<div class="product">
+  const data = JSON.parse(localStorage.getItem("mockdata"));
+  const productsContainer = document.getElementById("products");
+  let products = [];
+  data.map((item) => {
+    products += `<div class="product">
                         <h2>Doador: ${item.doador}</h2>
                         <h3>Validade: (${item.validade})</h3>
                         <img src="${item.img}" alt="product" />
@@ -15,27 +14,30 @@ function initialLoad() {
                                 <p>Localização: (${item.localizacao})</p>
                             </div>
                             <div class="button-container">
-                                <button class="stock-button">Rejeitar</button>
-                                <button class="stock-button2">Aceitar</button>
+                                <button onclick="reject(${item.id})" class="stock-button">Rejeitar</button>
                             </div>
-                    </div>`
-
-    })
-    productsContainer.innerHTML = products
+                    </div>`;
+  });
+  productsContainer.innerHTML = products;
 }
 
 function filterList() {
-    const input = document.querySelector(".search-bar input");
-    const filter = input.value.toLowerCase();
-    const items = document.querySelectorAll(
-        ".category-item, .recommended-item"
-    );
-    items.forEach((item) => {
-        const text = item.querySelector("p").textContent.toLowerCase();
-        if (text.includes(filter)) {
-            item.style.display = "";
-        } else {
-            item.style.display = "none";
-        }
-    });
+  const input = document.querySelector(".search-bar input");
+  const filter = input.value.toLowerCase();
+  const items = document.querySelectorAll(".category-item, .recommended-item");
+  items.forEach((item) => {
+    const text = item.querySelector("p").textContent.toLowerCase();
+    if (text.includes(filter)) {
+      item.style.display = "";
+    } else {
+      item.style.display = "none";
+    }
+  });
 }
+
+const reject = (id) => {
+  const data = JSON.parse(localStorage.getItem("mockdata"));
+  const newData = data.filter((item) => item.id !== id);
+  localStorage.setItem("mockdata", JSON.stringify(newData));
+  initialLoad();
+};

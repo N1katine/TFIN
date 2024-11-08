@@ -1,3 +1,4 @@
+const form = document.getElementById("add-form");
 const mockdata = [
   {
     id: 1,
@@ -208,12 +209,12 @@ function filterList() {
 }
 
 function openModal() {
-  const modal = document.getElementById("myModal");
+  const modal = document.getElementById("adicionar-modal");
   modal.style.display = "block";
 }
 
 function openModal2(id) {
-  const modal2 = document.getElementById("myModal2");
+  const modal2 = document.getElementById("retirar-item-modal");
   const modalBodyRetirada = document.getElementById("modal-body-retirada");
 
   const data = JSON.parse(localStorage.getItem("mockdata"));
@@ -258,8 +259,8 @@ function openModal2(id) {
 }
 
 function closeModal() {
-  const modal1 = document.getElementById("myModal");
-  const modal2 = document.getElementById("myModal2");
+  const modal1 = document.getElementById("adicionar-modal");
+  const modal2 = document.getElementById("retirar-item-modal");
 
   if (modal1) {
     modal1.style.display = "none";
@@ -284,8 +285,28 @@ function post() {
 }
 
 window.onclick = function (event) {
-  const modal = document.getElementById("myModal");
+  const modal = document.getElementById("adicionar-modal");
   if (event.target == modal) {
     modal.style.display = "none";
   }
 };
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const data = JSON.parse(localStorage.getItem("mockdata"));
+  const newProduct = {
+    id: data.length + 1,
+    validade: form.validade.value,
+    categoria: form.categoria.value,
+    descricao: form.descricao.value,
+    img: "../imgs/img-placeholder.webp",
+    localizacao: form.localizacao.value,
+    produto: form.produto.value,
+    doador: form.doador.value,
+  };
+
+  data.push(newProduct);
+  localStorage.setItem("mockdata", JSON.stringify(data));
+  initialLoad();
+  closeModal();
+});
