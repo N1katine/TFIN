@@ -1,6 +1,6 @@
 window.addEventListener("load", initialLoad);
 function initialLoad() {
-  const data = JSON.parse(localStorage.getItem("mockdata"));
+  const data = JSON.parse(localStorage.getItem("mockProdutosPendentes"));
   const productsContainer = document.getElementById("products");
   let products = [];
   data.map((item) => {
@@ -15,6 +15,7 @@ function initialLoad() {
                             </div>
                             <div class="button-container">
                                 <button onclick="reject(${item.id})" class="stock-button">Rejeitar</button>
+                                <button onclick="accept(${item.id})" class="stock-button2">Aceitar</button>
                             </div>
                     </div>`;
   });
@@ -36,8 +37,21 @@ function filterList() {
 }
 
 const reject = (id) => {
-  const data = JSON.parse(localStorage.getItem("mockdata"));
+  const data = JSON.parse(localStorage.getItem("mockProdutosPendentes"));
   const newData = data.filter((item) => item.id !== id);
-  localStorage.setItem("mockdata", JSON.stringify(newData));
+  localStorage.setItem("mockProdutosPendentes", JSON.stringify(newData));
+  initialLoad();
+};
+
+const accept = (id) => {
+  const catalog = JSON.parse(localStorage.getItem("mockdata"));
+  const validation = JSON.parse(localStorage.getItem("mockProdutosPendentes"));
+
+  const product = validation.find((item) => item.id === id);
+  catalog.push(product);
+  localStorage.setItem("mockdata", JSON.stringify(catalog));
+
+  const newData = validation.filter((item) => item.id !== id);
+  localStorage.setItem("mockProdutosPendentes", JSON.stringify(newData));
   initialLoad();
 };

@@ -148,6 +148,11 @@ function initialLoad() {
   if (!localStorage.getItem("mockdata")) {
     localStorage.setItem("mockdata", JSON.stringify(mockdata));
   }
+
+  if (!localStorage.getItem("mockProdutosPendentes")) {
+    localStorage.setItem("mockProdutosPendentes", JSON.stringify([]));
+  }
+
   const productsContainer = document.getElementById("products");
   let productsHTML = "";
 
@@ -293,7 +298,7 @@ window.onclick = function (event) {
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  const data = JSON.parse(localStorage.getItem("mockdata"));
+  const data = JSON.parse(localStorage.getItem("mockProdutosPendentes"));
   const newProduct = {
     id: data.length + 1,
     validade: form.validade.value,
@@ -306,7 +311,7 @@ form.addEventListener("submit", (e) => {
   };
 
   data.push(newProduct);
-  localStorage.setItem("mockdata", JSON.stringify(data));
+  localStorage.setItem("mockProdutosPendentes", JSON.stringify(data));
   initialLoad();
   closeModal();
 });
