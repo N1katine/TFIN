@@ -3,7 +3,7 @@ const mockdata = [
   {
     id: 1,
     img: "../imgs/menu/naturais.png",
-    doador: "Estevao Bonavetnura",
+    doador: "Estevao Boaventura",
     validade: "12/12/2024",
     produto: "Pizza",
     categoria: "Lanches",
@@ -315,3 +315,17 @@ form.addEventListener("submit", (e) => {
   initialLoad();
   closeModal();
 });
+
+function increase() {
+  let stockCountElement = document.getElementById("stock-count");
+  let currentStock = parseInt(stockCountElement.textContent, 10);
+  stockCountElement.textContent = currentStock + 1;
+}
+
+function decrease() {
+  let stockCountElement = document.getElementById("stock-count");
+  let currentStock = parseInt(stockCountElement.textContent, 10);
+  if (currentStock > 1) {
+    stockCountElement.textContent = currentStock - 1;
+  }
+}

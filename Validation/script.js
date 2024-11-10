@@ -9,7 +9,7 @@ function initialLoad() {
                         <h3>Validade: (${item.validade})</h3>
                         <img src="${item.img}" alt="product" />
                             <div class="product-info">
-                                <h3>Nome: ${item.produto}</h3>
+                                <h3>Produto: ${item.produto}</h3>
                                 <p>Descrição: ${item.descricao}</p>
                                 <p>Localização: (${item.localizacao})</p>
                             </div>

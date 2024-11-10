@@ -50,6 +50,13 @@ body {
   color: #ffffff;
 }
 
+.profile-icon :hover {
+  background-color: #fafafa;
+  color: #f7f5f0;
+  border-radius: 24px;
+  cursor: pointer;
+}
+
 .main-content {
   display: grid;
   padding: 20px;
