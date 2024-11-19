@@ -14,9 +14,14 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   background-color: rgba(0, 0, 0, 0.8);
+  scroll-behavior: smooth;
 }
 
 header {
@@ -52,8 +57,9 @@ header {
 }
 
 main {
+  flex: 1;
+  /* Faz o main ocupar todo o espaço restante */
   padding: 1rem;
-  min-height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
@@ -82,6 +88,28 @@ a {
   transform: rotate(10deg);
 }
 
+/* Estado inicial do fade */
+.fade-container {
+  opacity: 0;
+  transform: translateY(20px);
+  /* Para dar um efeito de deslizamento */
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Quando o fade é ativado (fade-in) */
+.fade-container.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Quando o fade-out é ativado */
+.fade-container.hide {
+  opacity: 0;
+  transform: translateY(20px);
+  /* Efeito de sair com deslizamento */
+}
+
+
 
 /* PRIMEIRO CONTAINER */
 .container-home {
@@ -89,6 +117,7 @@ a {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 50px;
+  padding-bottom: 20%;
 }
 
 .left-panel {
@@ -96,10 +125,14 @@ a {
 }
 
 .right-panel {
+  padding: 1rem;
   max-width: 29%;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
-h1 {
+h1,
+ul {
   font-size: 3.5rem;
   color: #8fd400;
   line-height: 1.5;
@@ -112,6 +145,10 @@ h2 {
   margin-bottom: 10px;
 }
 
+li {
+  font-size: 2.0rem;
+  color: azure;
+}
 
 .about-container {
   padding-top: 10%;
@@ -129,10 +166,25 @@ h2 {
   border: 3px solid #00ff00;
   border-radius: 30px;
   transition: all 0.2s ease;
+  margin-right: 3%;
 }
 
 .custom-button:hover {
   background-color: #00ff00;
   border-radius: 30px;
   color: #000;
+}
+
+/* PRIMEIRO CONTAINER */
+
+
+footer {
+
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ecf0f1;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
