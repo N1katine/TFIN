@@ -52,13 +52,12 @@ header {
 
   &>nav {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
   }
 }
 
 main {
   flex: 1;
-  /* Faz o main ocupar todo o espaço restante */
   padding: 1rem;
   background-color: rgba(0, 0, 0, 0.6);
   display: flex;
@@ -145,6 +144,12 @@ h2 {
   margin-bottom: 10px;
 }
 
+h4 {
+  font-size: 2.5rem;
+  color: #8fd400;
+  padding-right: 60%;
+}
+
 li {
   font-size: 2.0rem;
   color: azure;
@@ -176,6 +181,51 @@ li {
 }
 
 /* PRIMEIRO CONTAINER */
+
+.page-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.page-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.page-button span {
+  font-size: 20px;
+  color: #00ff00;
+  margin: 0 10px;
+}
+
+.page-button div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.page-button.previous span {
+  order: -1;
+  /* Coloca o ícone à esquerda */
+}
+
+.page-button:hover span {
+  color: #57b857;
+}
+
+.page-button:hover p {
+  color: #81f081;
+}
+
 
 
 footer {

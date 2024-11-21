@@ -1,0 +1,8 @@
+body {
+    background-image: url("../public/imgs/bg-highway.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    object-fit: cover;
+}
